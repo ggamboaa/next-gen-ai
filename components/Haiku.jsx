@@ -25,15 +25,15 @@ export default function Haiku(props) {
         crop={{ type: "pad", source: true }}
         overlays={[{
           position: {
-            x: 40,
-            y: 40,
-            angle: -20,
+            x: 10,
+            y: 10,
+            angle: -10,
             gravity: 'north_west',
           },
           text: {
             color: 'white',
             fontFamily: 'Source Sans Pro',
-            fontSize: 40,
+            fontSize: 60,
             fontWeight: 'bold',
             text: `${props.haiku.line1}\n${props.haiku.line2}\n${props.haiku.line3}`.trim(),
           }

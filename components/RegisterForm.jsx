@@ -27,7 +27,7 @@ export default function RegisterForm() {
         )}
       </div>
       <div className="mb-3">
-        <input name="password" autoComplete="off" type="password" placeholder="password" className="input input-bordered w-full max-w-xs" />
+        <input name="password" autoComplete="off" type="password" placeholder="Password" className="input input-bordered w-full max-w-xs" />
         {formState.errors?.password && (
           <div role="alert" className="alert alert-warning">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">

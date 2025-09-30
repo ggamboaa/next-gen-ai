@@ -27,7 +27,7 @@ export default function Page() {
           )}
         </div>
         <div className="mb-3">
-          <input name="password" autoComplete="off" type="password" placeholder="password" className="input input-bordered w-full max-w-xs" />
+          <input name="password" autoComplete="off" type="password" placeholder="Password" className="input input-bordered w-full max-w-xs" />
         </div>
 
         <div className="text-center">

@@ -84,7 +84,7 @@ export const register = async function (prevState, formData) {
     errors.username = "That username is already in use."
   }
 
-  if (ourUser.password.length < 12) errors.password = "Password must be at least 12 characters.";
+  if (ourUser.password.length < 5) errors.password = "Password must be at least 5 characters.";
   if (ourUser.password.length > 50) errors.password = "Password cannot exceed 50 characters.";
   if (ourUser.password == "") errors.password = "You must provide a password.";
 
