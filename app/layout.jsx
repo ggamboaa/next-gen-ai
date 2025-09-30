@@ -13,7 +13,8 @@ export default function RootLayout({ children }) {
         <Header />
         <main className="container mx-auto p-10">{children}</main>
         <footer className="text-gray-400 text-center text-xs py-5">
-          <p>Copyright &copy; {new Date().getFullYear()} - All rights reserved.</p>
+          <p>Innovation Sprint &copy; {new Date().getFullYear()} - WebCOE</p>
+          <p>Gilbert Gamboa Alvarado.</p>
         </footer>
       </body>
     </html>

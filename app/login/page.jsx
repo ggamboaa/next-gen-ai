@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { useFormState } from "react-dom"
-import { login } from "../../actions/userController"
+import { useFormState } from "react-dom";
+import { login } from "../../actions/userController";
 
 export default function Page() {
-  const [formState, formAction] = useFormState(login, {})
+  const [formState, formAction] = useFormState(login, {});
 
   return (
     <>
-      <h2 className="text-center text-2xl text-gray-600 mb-5">Log In</h2>
+      <h2 className="text-center text-2xl text-white-600 mb-5">Log In</h2>
       <form action={formAction} className="max-w-xs mx-auto">
         <div className="mb-3">
           <input name="username" autoComplete="off" type="text" placeholder="Username" className="input input-bordered w-full max-w-xs" />
@@ -29,8 +29,11 @@ export default function Page() {
         <div className="mb-3">
           <input name="password" autoComplete="off" type="password" placeholder="password" className="input input-bordered w-full max-w-xs" />
         </div>
-        <button className="btn btn-primary">Submit</button>
+
+        <div className="text-center">
+          <button className="btn btn-primary">Submit</button>
+        </div>
       </form>
     </>
-  )
+  );
 }

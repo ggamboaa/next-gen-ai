@@ -1,26 +1,26 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { createHaiku, editHaiku } from "../actions/haikuController"
-import { useFormState } from "react-dom"
-import { CldUploadWidget } from "next-cloudinary"
+import { useState } from "react";
+import { createHaiku, editHaiku } from "../actions/haikuController";
+import { useFormState } from "react-dom";
+import { CldUploadWidget } from "next-cloudinary";
 
 export default function HaikuForm(props) {
-  const [signature, setSignature] = useState("")
-  const [public_id, setPublic_id] = useState("")
-  const [version, setVersion] = useState("")
+  const [signature, setSignature] = useState("");
+  const [public_id, setPublic_id] = useState("");
+  const [version, setVersion] = useState("");
 
-  let actualAction
+  let actualAction;
 
   if (props.action === "create") {
-    actualAction = createHaiku
+    actualAction = createHaiku;
   }
 
   if (props.action === "edit") {
-    actualAction = editHaiku
+    actualAction = editHaiku;
   }
 
-  const [formState, formAction] = useFormState(actualAction, {})
+  const [formState, formAction] = useFormState(actualAction, {});
 
   return (
     <form action={formAction} className="max-w-xs mx-auto">
@@ -97,27 +97,29 @@ export default function HaikuForm(props) {
       <div className="mb-4">
         <CldUploadWidget
           onSuccess={(result, { widget }) => {
-            console.log(result?.info)
-            setSignature(result?.info.signature)
-            setPublic_id(result?.info.public_id)
-            setVersion(result?.info.version)
+            console.log(result?.info);
+            setSignature(result?.info.signature);
+            setPublic_id(result?.info.public_id);
+            setVersion(result?.info.version);
           }}
           onQueuesEnd={(result, { widget }) => {
-            widget.close()
+            widget.close();
           }}
           signatureEndpoint="/widget-signature"
         >
           {({ open }) => {
             function handleClick(e) {
-              e.preventDefault()
-              open()
+              e.preventDefault();
+              open();
             }
 
             return (
-              <button className="btn btn-secondary" onClick={handleClick}>
-                Upload an Image
-              </button>
-            )
+              <div className="text-center">
+                <button className="btn btn-secondary" onClick={handleClick}>
+                  Upload an Image
+                </button>
+              </div>
+            );
           }}
         </CldUploadWidget>
       </div>
@@ -127,7 +129,10 @@ export default function HaikuForm(props) {
       <input type="hidden" name="signature" value={signature} />
 
       <input type="hidden" name="haikuId" defaultValue={props.haiku?._id.toString()} />
-      <button className="btn btn-primary">Submit</button>
+
+      <div className="text-center">
+        <button className="btn btn-primary">Submit</button>
+      </div>
     </form>
-  )
+  );
 }

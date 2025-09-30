@@ -20,7 +20,7 @@ export default async function Page(props) {
 
   return (
     <div>
-      <h2 className="text-center text-4xl text-gray-600 mb-5">Edit Post</h2>
+      <h2 className="text-center text-4xl text-white-600 mb-5">Edit Post</h2>
       <HaikuForm haiku={doc} action="edit" />
     </div>
   )

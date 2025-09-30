@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { useFormState, useFormStatus } from "react-dom"
-import { register } from "../actions/userController"
+import { useFormState } from "react-dom";
+import { register } from "../actions/userController";
 
 export default function RegisterForm() {
-  const [formState, formAction] = useFormState(register, {})
+  const [formState, formAction] = useFormState(register, {});
 
-  console.log(formState)
+  console.log(formState);
 
   return (
     <form action={formAction} className="max-w-xs mx-auto">
@@ -42,7 +42,9 @@ export default function RegisterForm() {
           </div>
         )}
       </div>
-      <button className="btn btn-primary">Create Account</button>
+      <div className="text-center">
+        <button className="btn btn-primary ">Create Account</button>
+      </div>
     </form>
-  )
+  );
 }

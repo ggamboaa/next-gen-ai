@@ -6,32 +6,32 @@ export default async function Header() {
   const user = await getUserFromCookie()
 
   return (
-    <header className="bg-gray-100 shadow-md">
+    <header className="bg-green-100 shadow-md">
       <div className="container mx-auto">
         <div className="navbar">
           <div className="flex-1">
-            <Link href="/" className="btn btn-ghost text-xl">
-              OurHaikuApp
+            <Link href="/" className="btn btn-primary text-xl">
+              Home
             </Link>
           </div>
           <div className="flex-none">
             <ul className="menu menu-horizontal px-1">
               {user && (
                 <>
-                  <li className="mr-3">
+                  <li className="mr-3 text-center">
                     <Link href="/create-haiku" className="btn btn-primary">
                       Create Haiku
                     </Link>
                   </li>
                   <li>
-                    <form action={logout} className="btn btn-neutral">
+                    <form action={logout} className="btn btn-primary">
                       <button>Log Out</button>
                     </form>
                   </li>
                 </>
               )}
               {!user && (
-                <li>
+                <li className="btn btn-primary">
                   <Link href="/login">Log In</Link>
                 </li>
               )}
